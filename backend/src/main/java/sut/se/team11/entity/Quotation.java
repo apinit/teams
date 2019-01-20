@@ -7,7 +7,7 @@ import lombok.NonNull;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Set;
+
 
 @Data
 @Entity
@@ -23,16 +23,16 @@ public class Quotation {
 
 
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "customerId")
-    private Set<Customer> customer;
+    private Customer customer;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "EmployeeId")
     private Employee employee ;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "BuyItemId")
     private BuyItem buyItem;
 
