@@ -24,16 +24,16 @@ public class SaleItem {
     private @NonNull Date date;
 
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "customerId")
-    private Set<Customer> customers;
+    private Customer customer;
 
     @ManyToOne
     @JoinColumn(name = "employeeId")
     private Employee employee;
 
     @ManyToOne
-    @JoinColumn(name = "buyitemId")
+    @JoinColumn(name = "buyItemId")
     private BuyItem buyItem;
 
 }
