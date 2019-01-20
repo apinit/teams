@@ -16,14 +16,14 @@ public class Receipt {
     private @NonNull Date date;
     private @NonNull int netPrice;
 
-//    @ManyToOne
-//    @JoinColumn(name = "branchId")
-//    private Branch branch;
-//    @ManyToOne
-//    @JoinColumn(name = "employeeId")
-//    private Employee employee;
-//    @OneToOne
-//    @JoinColumn(name = "cartId")
-//    private Cart cart;
+    @ManyToOne
+    @JoinColumn(name = "branchId")
+    private Branch branch;
+    @ManyToOne
+    @JoinColumn(name = "employeeId")
+    private Employee employee;
+    @OneToOne
+    @JoinColumn(name = "cartId")
+    private Cart cart;
 }
 
