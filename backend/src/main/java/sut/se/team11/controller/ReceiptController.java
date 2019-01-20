@@ -59,7 +59,7 @@ public class ReceiptController {
         double sumTotalPrice = 0;
         int itemAmount = buyItems.size();
         for(int i = 0; i < itemAmount; i++){
-            sumTotalPrice =+ totalPrice;
+            sumTotalPrice = sumTotalPrice + totalPrice;
         }
         return sumTotalPrice;
     }
