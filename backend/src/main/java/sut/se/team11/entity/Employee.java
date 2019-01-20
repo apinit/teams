@@ -1,18 +1,41 @@
 package sut.se.team11.entity;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
+
 import javax.persistence.*;
+import java.util.Date;
 
-@Data
 @Entity
+@Getter @Setter
 @NoArgsConstructor
-
+@ToString @EqualsAndHashCode
 public class Employee {
-    @Id
-    @SequenceGenerator(name = "employee_seq", sequenceName = "employee_seq")
-    @GeneratedValue(generator = "employee_seq", strategy = GenerationType.SEQUENCE)
-    private @NonNull Long eId;
-    private @NonNull String eName;
+    @Id @GeneratedValue
+    private long eId;
+    private String title;
+    private String eName;
+    private int age;
+    private Date bDate;
+    private String tel;
+    private String address;
+
+
+    @ManyToOne
+    @JoinColumn (name = "pId")
+    private Province province;
+
+//    @ManyToOne
+//    private Education education;
+//
+//    @ManyToOne
+//    private Brunch brunch;
+//
+//    @ManyToOne
+//    private Position position;
+
+
+
+
+
+
 }
