@@ -6,6 +6,7 @@ import lombok.NonNull;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -18,4 +19,9 @@ public class Cart {
     private @NonNull String paymentStatus;
     private @NonNull Date date;
 
+    @OneToMany(mappedBy = "cart")
+    private List<BuyItem> buyItems;
+    @ManyToOne
+    @JoinColumn(name = "customerId")
+    private Customer customer;
 }

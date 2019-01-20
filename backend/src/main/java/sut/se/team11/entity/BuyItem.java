@@ -1,5 +1,6 @@
 package sut.se.team11.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -19,4 +20,15 @@ public class BuyItem {
     private @NonNull double price;
     private @NonNull double totalPrice;
     private @NonNull int amount;
+
+    @ManyToOne
+    @JoinColumn(name = "cartId")
+    @JsonIgnore
+    private Cart cart;
+    @ManyToOne
+    @JoinColumn(name = "categoryId")
+    private Category category;
+    @ManyToOne
+    @JoinColumn(name = "unitId")
+    private Unit unit;
 }
