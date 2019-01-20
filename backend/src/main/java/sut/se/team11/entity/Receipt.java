@@ -14,8 +14,7 @@ public class Receipt {
     @GeneratedValue(generator = "receipt_seq",strategy = GenerationType.SEQUENCE)
     private Long rId;
     private @NonNull Date date;
-    private @NonNull int netPrice;
-
+    private @NonNull double netPrice;
     @ManyToOne
     @JoinColumn(name = "branchId")
     private Branch branch;
@@ -25,5 +24,6 @@ public class Receipt {
     @OneToOne
     @JoinColumn(name = "cartId")
     private Cart cart;
+
 }
 
