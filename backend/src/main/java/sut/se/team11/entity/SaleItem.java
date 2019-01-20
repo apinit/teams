@@ -14,8 +14,8 @@ import java.util.Set;
 @NoArgsConstructor
 public class SaleItem {
     @Id
-    @SequenceGenerator(name = "buy_seq", sequenceName = "buy_seq")
-    @GeneratedValue(generator = "buy_seq", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "sale_seq", sequenceName = "sale_seq")
+    @GeneratedValue(generator = "sale_seq", strategy = GenerationType.SEQUENCE)
     private Long id;
     private @NonNull String itemName;
     private @NonNull double price;
