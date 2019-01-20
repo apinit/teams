@@ -36,6 +36,4 @@ public class SaleItem {
     @JoinColumn(name = "buyitemId")
     private BuyItem buyItem;
 
-
-
 }
