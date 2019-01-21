@@ -15,7 +15,7 @@ public class Employee {
     private String title;
     private String eName;
     private int age;
-    private Date bDate;
+    //private Date bDate;
     private String tel;
     private String address;
 
