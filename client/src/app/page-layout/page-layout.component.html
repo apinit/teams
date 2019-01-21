@@ -1,16 +1,16 @@
 <div class="container">
   <mat-toolbar color="primary" class="mat-toolbar">
       <button mat-icon-button style="margin-right: 10px" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
-        <!-- <span>Third Line</span>
-        <span class="example-spacer"></span>
+         <span>ระบบรับซื้อของเก่า</span>
+      <!--  <span class="example-spacer"></span>
         <span>Third Line</span> -->
     </mat-toolbar>
 
     <mat-sidenav-container class="sidebar-container">
       <mat-sidenav #sidenav  mode="over" class="sidebar-menu">
         <ul>
-          <li (click)="goHome(); sidenav.close()">HOME</li>
-          <li (click)="goPage2(); sidenav.close()">PAGE2</li>
+          <li (click)="gocustomer(); sidenav.close()">สมัครสมาชิกลูกค้า</li>
+         <!-- <li (click)="goPage2(); sidenav.close()">PAGE2</li>-->
         </ul>
       </mat-sidenav>
       <mat-sidenav-content class="mat-sidenav-content">
