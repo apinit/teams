@@ -20,11 +20,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { PageLayoutComponent } from './page-layout/page-layout.component';
+import { FindCustomerComponent } from './components/find-customer/find-customer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageLayoutComponent
+    PageLayoutComponent,
+    FindCustomerComponent
   ],
   imports: [
     BrowserModule,
