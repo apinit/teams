@@ -6,5 +6,5 @@ import sut.se.team11.entity.BuyItem;
 
 @RepositoryRestResource
 public interface BuyItemRepository extends JpaRepository<BuyItem, Long> {
-    BuyItem findById(long buyItemId);
+     BuyItem findById(long buyItemId);
 }
