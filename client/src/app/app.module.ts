@@ -22,6 +22,8 @@ import { AppComponent } from './app.component';
 import { PageLayoutComponent } from './page-layout/page-layout.component';
 import { FindCustomerComponent } from './components/find-customer/find-customer.component';
 
+import { FindCustomerService } from './shared/find-customer/find-customer.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +50,9 @@ import { FindCustomerComponent } from './components/find-customer/find-customer.
     MatIconModule,
     MatSidenavModule
   ],
-  providers: [],
+  providers: [
+    FindCustomerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

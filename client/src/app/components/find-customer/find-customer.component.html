@@ -1,3 +1,10 @@
-<p>
-  find-customer works!
-</p>
+<div class="container">
+  <div class="find-customer">
+    <h1>ค้นหาลูกค้า</h1>
+    <mat-form-field appearance="outline" class="inputID">
+      <mat-label>ป้อนไอดีลูกค้า</mat-label>
+      <input matInput [(ngModel)]="id" name="id" placeholder="ป้อนไอดีลูกค้า">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onClick()" id="findBtn">ค้นหา</button>
+  </div>
+</div>
