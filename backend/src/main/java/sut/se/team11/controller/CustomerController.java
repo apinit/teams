@@ -43,7 +43,6 @@ import java.util.stream.Collectors;
         Province province = provinceRepository.findById(pId);
 
         newCustomer.setCustomername(name);
-
         newCustomer.setTel(tel);
         newCustomer.setAddress(address);
         newCustomer.setBranch(branch);
