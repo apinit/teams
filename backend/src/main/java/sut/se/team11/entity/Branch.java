@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
@@ -12,9 +13,9 @@ import javax.persistence.*;
 
 public class Branch {
     @Id
-    @SequenceGenerator(name = "beanch_seq", sequenceName = "beanch_seq")
-    @GeneratedValue(generator = "beanch_seq", strategy = GenerationType.SEQUENCE)
-    private @NonNull Long bId;
-    private @NonNull String bName;
+    @SequenceGenerator(name = "branch_seq", sequenceName = "branch_seq")
+    @GeneratedValue(generator = "branch_seq", strategy = GenerationType.SEQUENCE)
+    private @NotNull Long bId;
+    private @NotNull String bName;
 
 }

@@ -24,14 +24,14 @@ public class Employee {
     @JoinColumn (name = "pId")
     private Province province;
 
-//    @ManyToOne
-//    private Education education;
-//
-//    @ManyToOne
-//    private Brunch brunch;
-//
-//    @ManyToOne
-//    private Position position;
+    @ManyToOne
+    private Education education;
+
+    @ManyToOne
+    private Branch brunch;
+
+    @ManyToOne
+    private Position position;
 
 
 
