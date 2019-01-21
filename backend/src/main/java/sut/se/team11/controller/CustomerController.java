@@ -42,7 +42,7 @@ import java.util.stream.Collectors;
         Career career = careerRepository.findById(cId);
         Province province = provinceRepository.findById(pId);
 
-        newCustomer.setCustomername(name);
+        newCustomer.setCustomerName(name);
         newCustomer.setTel(tel);
         newCustomer.setAddress(address);
         newCustomer.setBranch(branch);
