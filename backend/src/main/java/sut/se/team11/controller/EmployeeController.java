@@ -1,12 +1,12 @@
 package sut.se.team11.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-import sut.se.team11.entity.Employee;
-import sut.se.team11.repository.EmployeeRepository;
+import org.springframework.web.bind.annotation.*;
+import sut.se.team11.entity.*;
+import sut.se.team11.repository.*;
 
+import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,12 +14,46 @@ import java.util.stream.Collectors;
 @CrossOrigin(origins = "http://localhost:4200")
 
 
-public class EmployeeController {
+class EmployeeController {
     @Autowired
     public EmployeeRepository employeeRepository ;
+    @Autowired
+    private BranchRepository branchRepository;
+    @Autowired
+    private ProvinceRepository provinceRepository;
+    @Autowired
+    private PositionRepository positionRepository;
+    @Autowired
+    private EducationRopository educationRopository;
 
     @GetMapping("/Employee")
-    public List<Employee> Employee(){
+    public Collection<Employee> Employee(){
+
         return employeeRepository.findAll().stream().collect(Collectors.toList());
     }
+
+    @PostMapping("/Employee/{title}/{name}/{bdate}/{age}/{tel}/{address}/{pId}/{edId}/{bId}/{psId}")
+    public Employee newEmployee (@RequestBody Employee newEmployee, @PathVariable String title, @PathVariable String name,
+                                 @PathVariable Date bdate,@PathVariable int age, @PathVariable String tel, @PathVariable String address,
+                                 @PathVariable long pId, @PathVariable long edId, @PathVariable  long bId, @PathVariable long psId ){
+        Province province = provinceRepository.findById(pId);
+        Education education = educationRopository.findById(edId);
+        Branch branch = branchRepository.findById(bId);
+        Position position = positionRepository.findById(psId);
+
+        newEmployee.setTitle(title);
+        newEmployee.setEName(name);
+        //newEmployee.setBDate(bdate);
+        newEmployee.setAge(age);
+        newEmployee.setTel(tel);
+        newEmployee.setAddress(address);
+        newEmployee.setProvince(province);
+        newEmployee.setEducation(education);
+        newEmployee.setBrunch(branch);
+        newEmployee.setPosition(position);
+
+        return employeeRepository.save(newEmployee);
+    }
+
+
 }
