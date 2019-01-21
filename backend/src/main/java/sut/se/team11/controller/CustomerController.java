@@ -33,15 +33,16 @@ import java.util.stream.Collectors;
         return customerRepository.findAll().stream().collect(Collectors.toList());
     }
 
-    @PostMapping("/Customer/{bId}/{name}/{cId}/{address}/{pId}")
-    public Customer newCustomer(@RequestBody Customer newCustomer,@PathVariable String name,@PathVariable String address,@PathVariable long bId,@PathVariable long pId,@PathVariable long cId) {
+    @PostMapping("/Customer/{bId}/{name}/{cId}/{address}/{pId}/{tel}")
+    public Customer newCustomer(@RequestBody Customer newCustomer,@PathVariable String name,@PathVariable String tel,@PathVariable String address,@PathVariable long bId,@PathVariable long pId,@PathVariable long cId) {
 
 
         Branch branch = branchRepository.findById(bId);
         Career career = careerRepository.findById(cId);
         Province province = provinceRepository.findById(pId);
 
-        newCustomer.setName(name);
+        newCustomer.setCustomername(name);
+        newCustomer.setTel(tel);
         newCustomer.setAddress(address);
         newCustomer.setBranch(branch);
         newCustomer.setCareer(career);
