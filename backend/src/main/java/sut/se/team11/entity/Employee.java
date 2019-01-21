@@ -22,7 +22,7 @@ public class Employee {
 
     @ManyToOne
     @JoinColumn (name = "pId")
-    private Province province;
+    private Province province;   
 
     @ManyToOne
     private Education education;
