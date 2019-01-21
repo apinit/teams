@@ -61,8 +61,8 @@ public class SaleItemController {
         return saleItemRepository.save(saleItem1);
     }
 
-    @GetMapping(path = "/findCustomer/{customerId}")
-    private ResponseEntity<Customer> findCustomer(@PathVariable long customerId){
+    @GetMapping(path = "/findCustomers/{customerId}")
+    private ResponseEntity<Customer> findCustomers(@PathVariable long customerId){
         Customer customer1 = customerRepository.findById(customerId);
         if(customer1 == null){
             return ResponseEntity.notFound().build();
