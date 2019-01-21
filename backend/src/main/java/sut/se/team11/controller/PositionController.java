@@ -23,5 +23,5 @@ public class PositionController {
     public List<Position> Position() {
         return positionRepository.findAll().
                 stream().collect(Collectors.toList());
-    }
+    }  
 }
