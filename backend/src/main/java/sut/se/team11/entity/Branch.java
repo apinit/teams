@@ -18,4 +18,5 @@ public class Branch {
     private @NotNull Long bId;
     private @NotNull String bName;
 
+
 }
