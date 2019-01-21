@@ -6,5 +6,5 @@ import sut.se.team11.entity.Cart;
 
 @RepositoryRestResource
 public interface CartRepository extends JpaRepository<Cart, Long> {
-    Cart findById(long cartId);
+    Cart findById(long cartId); 
 }
