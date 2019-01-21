@@ -13,5 +13,5 @@ public class Education {
     @SequenceGenerator(name = "education_seq", sequenceName = "education_seq")
     @GeneratedValue(generator = "education_sq", strategy = GenerationType.SEQUENCE)
     private long edId;
-    private String edName;
+    private String edName;  
 }
