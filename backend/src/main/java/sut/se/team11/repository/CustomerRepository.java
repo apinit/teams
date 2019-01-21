@@ -6,5 +6,5 @@ import sut.se.team11.entity.Customer;
 
 @RepositoryRestResource
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
-    Customer findById(long id);
+    Customer findById(long customerId);
 }

@@ -8,5 +8,6 @@ import sut.se.team11.entity.SaleItem;
 @RepositoryRestResource
 @CrossOrigin(origins = "http://localhost:4200")
 public interface SaleItemRepository extends JpaRepository<SaleItem,Long> {
+    SaleItem findById(long saleItemId);
 
 }
