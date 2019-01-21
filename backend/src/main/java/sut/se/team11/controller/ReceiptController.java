@@ -54,6 +54,4 @@ public class ReceiptController {
         return receiptRepository.save(receipt);
     }
 
-    }
-
 }
