@@ -1,10 +1,7 @@
 package sut.se.team11.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import sut.se.team11.entity.BuyItem;
 import sut.se.team11.entity.Cart;
 import sut.se.team11.entity.Category;
@@ -15,6 +12,7 @@ import sut.se.team11.repository.CategoryRepository;
 import sut.se.team11.repository.UnitRepository;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class BuyItemController {
     @Autowired private BuyItemRepository buyItemRepository;
     @Autowired private CartRepository cartRepository;
