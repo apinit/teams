@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -15,6 +16,7 @@ public class Receipt {
     private Long rId;
     private @NonNull Date date;
     private @NonNull double netPrice;
+
     @ManyToOne
     @JoinColumn(name = "branchId")
     private Branch branch;
@@ -25,5 +27,14 @@ public class Receipt {
     @JoinColumn(name = "cartId")
     private Cart cart;
 
+    public double sumTotalPrice() {
+        BuyItem buyItem = new BuyItem();
+        int itemAmount = cart.getBuyItems().size();
+        for(int i = 0; i < itemAmount; i++){
+            netPrice =+ buyItem.getTotalPrice();;
+        }
+        return netPrice ;
+        ;
+    }
 }
 

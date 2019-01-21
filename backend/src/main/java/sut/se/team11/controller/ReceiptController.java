@@ -1,6 +1,5 @@
 package sut.se.team11.controller;
 
-import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sut.se.team11.entity.*;
@@ -44,24 +43,17 @@ public class ReceiptController {
         Cart newCart = new Cart();
         BuyItem newBuyItem = new BuyItem();
 
-
         newReceipt.setDate(date);
         newBranch.setBName(bName);
         newEmployee.setEName(eName);
         newCart.setCartId(cartId);
 
-        netPrice = sumTotalPrice(newBuyItem.getTotalPrice(), newCart.getBuyItems());
+        netPrice = newReceipt.sumTotalPrice();
         newReceipt.setNetPrice(netPrice);
 
         return receiptRepository.save(receipt);
     }
-    public double sumTotalPrice(@NonNull double totalPrice, List<BuyItem> buyItems){
-        double sumTotalPrice = 0;
-        int itemAmount = buyItems.size();
-        for(int i = 0; i < itemAmount; i++){
-            sumTotalPrice = sumTotalPrice + totalPrice;
-        }
-        return sumTotalPrice;
+
     }
 
 }
