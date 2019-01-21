@@ -1,5 +1,6 @@
 package sut.se.team11.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import sut.se.team11.entity.Branch;
@@ -49,6 +50,16 @@ import java.util.stream.Collectors;
 
 
         return  customerRepository.save(newCustomer);
+    }
+
+    // B5804658
+    @GetMapping(path = "/findCustomer/{id}")
+    private ResponseEntity<Customer> findCustomer(@PathVariable long id){
+        Customer customer1 = customerRepository.findById(id);
+        if(customer1 == null){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok().body(customer1);
     }
 
 }
