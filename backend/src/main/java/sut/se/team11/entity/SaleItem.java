@@ -16,7 +16,7 @@ public class SaleItem {
     @Id
     @SequenceGenerator(name = "sale_seq", sequenceName = "sale_seq")
     @GeneratedValue(generator = "sale_seq", strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private Long saleItemId;
     private @NonNull String itemName;
     private @NonNull double price;
     private @NonNull int amount;
@@ -35,5 +35,9 @@ public class SaleItem {
     @ManyToOne
     @JoinColumn(name = "buyItemId")
     private BuyItem buyItem;
+
+    public double caculateTotalPrice(double price, int amount){
+        return price*amount;
+    }
 
 }
