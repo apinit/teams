@@ -61,6 +61,5 @@ import java.util.stream.Collectors;
         }
         return ResponseEntity.ok().body(customer1);
     }
-
 }
 
