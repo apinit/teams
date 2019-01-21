@@ -23,19 +23,28 @@ import { PageLayoutComponent } from './page-layout/page-layout.component';
 import { FindCustomerComponent } from './components/find-customer/find-customer.component';
 
 import { FindCustomerService } from './shared/find-customer/find-customer.service';
+import { CreateCartService } from './shared/create-cart/create-cart.service';
+import { CreateCartComponent } from './components/create-cart/create-cart.component';
+
+const routes: Routes = [
+  {path: '', redirectTo: '/find-customer', pathMatch: 'full'},
+  {path: 'find-customer', component: FindCustomerComponent},
+  {path: ':id/newCart', component: CreateCartComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     PageLayoutComponent,
-    FindCustomerComponent
+    FindCustomerComponent,
+    CreateCartComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule,
+    RouterModule.forRoot(routes),
     HttpClientModule,
     MatButtonModule,
     MatCardModule,
@@ -51,7 +60,8 @@ import { FindCustomerService } from './shared/find-customer/find-customer.servic
     MatSidenavModule
   ],
   providers: [
-    FindCustomerService
+    FindCustomerService,
+    CreateCartService
   ],
   bootstrap: [AppComponent]
 })
