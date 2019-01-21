@@ -24,7 +24,7 @@ public class SaleItemController {
     }
 
     @PostMapping("/SaleItem/{itemName}/{price}/{totalpirce}/{amount}/{date}")
-    public SaleItem saleItem(@RequestBody SaleItem saleItem, @PathVariable String itemName, @PathVariable Double price, @PathVariable double totalPrice, @PathVariable int amount, @PathVariable Date date){
+    public SaleItem saleItem(@RequestBody SaleItem saleItem, @PathVariable String itemName, @PathVariable double price, @PathVariable double totalPrice, @PathVariable int amount, @PathVariable Date date){
 
         SaleItem saleItem1 = new SaleItem();
 
