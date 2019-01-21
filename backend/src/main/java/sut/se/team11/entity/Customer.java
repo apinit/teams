@@ -12,9 +12,10 @@ public class Customer {
     @Id
     @SequenceGenerator(name = "customer_seq", sequenceName = "customer_seq")
     @GeneratedValue(generator = "customer_seq", strategy = GenerationType.SEQUENCE)
-    private Long id;
-    private @NonNull String name;
+    private Long customerid;
+    private @NonNull String customername;
     private @NonNull String address;
+    private @NonNull String tel;
 
     @ManyToOne
     private Branch branch;

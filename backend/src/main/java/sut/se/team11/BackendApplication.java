@@ -48,10 +48,6 @@ public class BackendApplication {
 
 
 			});
-			
-			branchRepository.findAll().forEach(System.out::println);
-			careerRepository.findAll().forEach(System.out::println);
-			provinceRepository.findAll().forEach(System.out::println);
 		};
 	}
 }
