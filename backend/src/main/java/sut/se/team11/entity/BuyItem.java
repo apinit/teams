@@ -31,4 +31,8 @@ public class BuyItem {
     @ManyToOne
     @JoinColumn(name = "unitId")
     private Unit unit;
+
+    public double caculateTotalPrice(double price, int amount){
+        return price*amount;
+    }
 }
