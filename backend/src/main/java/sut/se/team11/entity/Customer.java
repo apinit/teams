@@ -12,8 +12,8 @@ public class Customer {
     @Id
     @SequenceGenerator(name = "customer_seq", sequenceName = "customer_seq")
     @GeneratedValue(generator = "customer_seq", strategy = GenerationType.SEQUENCE)
-    private Long customerid;
-    private @NonNull String customername;
+    private Long customerId;
+    private @NonNull String customerName;
     private @NonNull String address;
     private @NonNull String tel;
 
