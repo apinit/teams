@@ -20,6 +20,7 @@ public class EducationController {
     @GetMapping ("/Education")
     public List<Education> Education() {
         return educationRopository.findAll().stream()
-                .collect(Collectors.toList());
+                .collect(Collectors
+                        .toList());
     }
 }
