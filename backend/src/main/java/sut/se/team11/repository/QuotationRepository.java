@@ -6,6 +6,7 @@ import sut.se.team11.entity.Quotation;
 
 @RepositoryRestResource
 public interface QuotationRepository extends JpaRepository<Quotation, Long>  {
+    Quotation findById(long quotationId);
 
 
 
