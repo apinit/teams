@@ -17,7 +17,8 @@ public class BackendApplication {
 	}
 	@Bean
 	ApplicationRunner init(CustomerRepository customerRepository, BranchRepository branchRepository, CareerRepository careerRepository,
-						   EmployeeRepository employeeRepository, ProvinceRepository provinceRepository
+						   EmployeeRepository employeeRepository, ProvinceRepository provinceRepository, PositionRepository positionRepository,
+						   EducationRopository educationRopository
 	){
 		return  args -> {
 
@@ -48,6 +49,17 @@ public class BackendApplication {
 
 
 			});
+			Stream.of("ประถมศึกษา","มัธยมศึกษา","ปวช.","ปวส.","ปริญญาตรี","ปริญญาโท","ปริญญาเอก").forEach(edName ->{
+
+				Education education = new Education();
+				education.setEdName(edName);
+				educationRopository.save(education);
+			});
+			Stream.of("พนักงานฝ่ายขนของ","พนักงานฝ่ายบัญชี","พนักงานฝ่ายบุคคล","พนักงานฝ่ายขาย","พนักงานทำความสะอาด").forEach(psName ->{
+				Position position = new Position();
+				position.setPsName(psName);
+				positionRepository.save(position);
+					});
 		};
 	}
 }

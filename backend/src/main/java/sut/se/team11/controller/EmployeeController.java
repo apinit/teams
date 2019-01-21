@@ -43,7 +43,7 @@ class EmployeeController {
 
         newEmployee.setTitle(title);
         newEmployee.setEName(name);
-        //newEmployee.setBDate(bdate);
+        newEmployee.setBDate(bdate);
         newEmployee.setAge(age);
         newEmployee.setTel(tel);
         newEmployee.setAddress(address);
