@@ -61,14 +61,14 @@ public class SaleItemController {
         return saleItemRepository.save(saleItem1);
     }
 
-    @GetMapping(path = "/findCustomers/{customerId}")
-    private ResponseEntity<Customer> findCustomers(@PathVariable long customerId){
-        Customer customer1 = customerRepository.findById(customerId);
-        if(customer1 == null){
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok().body(customer1);
-    }
+//    @GetMapping(path = "/findCustomers/{customerId}")
+//    private ResponseEntity<Customer> findCustomers(@PathVariable long customerId){
+//        Customer customer1 = customerRepository.findById(customerId);
+//        if(customer1 == null){
+//            return ResponseEntity.notFound().build();
+//        }
+//        return ResponseEntity.ok().body(customer1);
+//    }
 
     @GetMapping(path = "/findEmployee/{eId}")
     private ResponseEntity<Employee> findEmployee(@PathVariable long eId){
