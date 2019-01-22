@@ -11,7 +11,7 @@ export class FindEmployeeService {
     private http: HttpClient
   ) { }
 
-  findCustomer(customerId: any): Observable<any>{
+  findEmployee(customerId: any): Observable<any>{
     // console.log(customerId);
     // return this.http.get(this.API + `{/findCustomer/${customerId}}`);
     return this.http.get(this.API + '/findCustomer/' + customerId);

@@ -32,7 +32,7 @@ import { FindEmployeeComponent } from './components/find-employee/find-employee.
 const routes: Routes = [
   {path: '', redirectTo: '/find-customer', pathMatch: 'full'},
   {path: 'find-customer', component: FindCustomerComponent},
-  {path: '', redirectTo: '/find-employee', pathMatch: 'full'},
+  // {path: '', redirectTo: '/find-employee', pathMatch: 'full'},
   {path: 'find-employee', component: FindEmployeeComponent},
   {path: ':id/newCart', component: CreateCartComponent},
   {path: 'customer', component: CustomerComponent}
