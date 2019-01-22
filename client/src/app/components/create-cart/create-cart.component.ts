@@ -25,7 +25,7 @@ export class CreateCartComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(param => {
       this.id = param['id'];
-      console.log(this.id);
+      // console.log(this.id);
       this.find.findCustomer(this.id).subscribe((data) => {
         this.customer = data;
       });

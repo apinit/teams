@@ -23,13 +23,17 @@ import { PageLayoutComponent } from './page-layout/page-layout.component';
 import { FindCustomerComponent } from './components/find-customer/find-customer.component';
 
 import { FindCustomerService } from './shared/find-customer/find-customer.service';
+import { FindEmployeeService } from './shared/find-employee/find-employee.service';
 import { CreateCartService } from './shared/create-cart/create-cart.service';
 import { CreateCartComponent } from './components/create-cart/create-cart.component';
 import { CustomerComponent } from './components/customer/customer.component';
+import { FindEmployeeComponent } from './components/find-employee/find-employee.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/find-customer', pathMatch: 'full'},
   {path: 'find-customer', component: FindCustomerComponent},
+  {path: '', redirectTo: '/find-employee', pathMatch: 'full'},
+  {path: 'find-employee', component: FindEmployeeComponent},
   {path: ':id/newCart', component: CreateCartComponent},
   {path: 'customer', component: CustomerComponent}
 ];
@@ -39,6 +43,7 @@ const routes: Routes = [
     AppComponent,
     PageLayoutComponent,
     FindCustomerComponent,
+    FindEmployeeComponent,
     CreateCartComponent,
     CustomerComponent
   ],
@@ -64,6 +69,7 @@ const routes: Routes = [
   ],
   providers: [
     FindCustomerService,
+    FindEmployeeService,
     CreateCartService
   ],
   bootstrap: [AppComponent]

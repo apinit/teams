@@ -12,3 +12,8 @@ export class Cart{
     date: Date;
     customer: Customer = new Customer();
 }
+export class Employee{
+    eId: any;
+    eName: string;
+   
+}
