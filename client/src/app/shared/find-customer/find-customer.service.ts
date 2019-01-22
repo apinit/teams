@@ -12,7 +12,7 @@ export class FindCustomerService {
   ) { }
 
   findCustomer(customerId: any): Observable<any>{
-    // console.log(customerId);
+    console.log(customerId);
     // return this.http.get(this.API + `{/findCustomer/${customerId}}`);
     return this.http.get(this.API + '/findCustomer/' + customerId);
   }

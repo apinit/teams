@@ -34,7 +34,7 @@ export class CreateCartComponent implements OnInit {
     });
   }
   newCart(){
-    this.cartSer.newCart(this.customer.customerid, this.cart).subscribe((res) => {
+    this.cartSer.newCart(this.customer.customerId, this.cart).subscribe((res) => {
       console.log(res);
     })
   }

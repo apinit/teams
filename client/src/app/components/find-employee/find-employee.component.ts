@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-// import { Employee } from '../../shared/models';
+import { Customer,Employee } from '../../shared/models';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Employee,Customer } from 'src/app/shared/customer/customer.service';
+// import { Employee } from 'src/app/shared/customer/customer.service';
 import { FindEmployeeService } from 'src/app/shared/find-employee/find-employee.service';
 
 @Component({
@@ -27,11 +27,11 @@ export class FindEmployeeComponent implements OnInit {
   }
   
   onClick(){
-    this.sub = this.find.findCustomer(this.id).subscribe((res) => {
+    this.sub = this.find.findEmployee(this.id).subscribe((res) => {
       console.log(res);
       this.customer = res;
-      console.log(this.customer.customerid);
-      this.router.navigate([`${this.customer.customerid}/newCart`]);
+      console.log(this.customer.customerId);
+      this.router.navigate([`${this.customer.customerId}/newCart`]);
     },err => {
       console.log('Error happen!!!', err);
     });

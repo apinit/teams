@@ -22,11 +22,12 @@ export class FindCustomerComponent implements OnInit {
   }
   
   onClick(){
+
     this.sub = this.find.findCustomer(this.id).subscribe((res) => {
       console.log(res);
       this.customer = res;
-      console.log(this.customer.customerid);
-      this.router.navigate([`${this.customer.customerid}/newCart`]);
+      console.log(this.customer.customerId);
+      this.router.navigate([`${this.customer.customerId}/newCart`]);
     },err => {
       console.log('Error happen!!!', err);
     });
