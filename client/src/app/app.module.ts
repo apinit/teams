@@ -28,6 +28,7 @@ import { CreateCartService } from './shared/create-cart/create-cart.service';
 import { CreateCartComponent } from './components/create-cart/create-cart.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { FindEmployeeComponent } from './components/find-employee/find-employee.component';
+import { ReceiptComponent } from './components/receipt/receipt.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/find-customer', pathMatch: 'full'},
@@ -45,7 +46,8 @@ const routes: Routes = [
     FindCustomerComponent,
     FindEmployeeComponent,
     CreateCartComponent,
-    CustomerComponent
+    CustomerComponent,
+    ReceiptComponent
   ],
   imports: [
     BrowserModule,
