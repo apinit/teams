@@ -36,7 +36,8 @@ const routes: Routes = [
   // {path: '', redirectTo: '/find-employee', pathMatch: 'full'},
   {path: 'find-employee', component: FindEmployeeComponent},
   {path: ':id/newCart', component: CreateCartComponent},
-  {path: 'customer', component: CustomerComponent}
+  {path: 'customer', component: CustomerComponent},
+  {path: 'receipt', component: ReceiptComponent}
 ];
 
 @NgModule({

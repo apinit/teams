@@ -1,3 +1,60 @@
-<p>
-  receipt works!
-</p>
+<mat-card class="container">
+  <div class="container">
+      <div class="receipt">
+        <h1>ค้นหาพนักงาน</h1>
+        <mat-form-field appearance="outline" class="inputID">
+          <mat-label>ป้อนไอดีพนักงาน</mat-label>
+          <input matInput [(ngModel)]="eid" name="eid" placeholder="ป้อนไอดีพนักงาน">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="onClickEmp()" id="findBtn">ค้นหา</button>
+      </div>
+
+      <div class="receipt">
+        <h1>ค้นหาใบรายการสินค้า</h1>
+        <mat-form-field appearance="outline" class="inputID">
+          <mat-label>ป้อนไอดีใบรายการสินค้า</mat-label>
+          <input matInput [(ngModel)]="cid" name="cid" placeholder="ป้อนไอดีใบรายการสินค้า">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="onClickCart()" id="findBtn">ค้นหา</button>
+      </div>
+  </div>
+</mat-card>
+
+<mat-card class="">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+  <!-- Name Column -->
+    <ng-container matColumnDef="item">
+      <th mat-header-cell *matHeaderCellDef> Item </th>
+      <td mat-cell *matCellDef="let element"> {{element.item}} </td>
+    </ng-container>
+
+  <!-- Weight Column -->
+    <ng-container matColumnDef="ttp">
+      <th mat-header-cell *matHeaderCellDef> Total Price </th>
+      <td mat-cell *matCellDef="let element"> {{element.ttp}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>
+<mat-card class="container">
+    <h1>ราคาสุทธิ</h1>
+  <div class="container">
+  <button mat-raised-button color="primary" (click)="onClickCart()" id="findBtn">คำนวณ</button>
+  </div>
+</mat-card>
+<mat-card class="container">
+  <div class="container">
+    <button mat-raised-button color="primary" (click)="onClickCart()" id="findBtn">บันทึก</button>
+  </div>
+</mat-card>
+
+
