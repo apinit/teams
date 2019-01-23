@@ -22,5 +22,11 @@ export class PageLayoutComponent implements OnInit {
       
     });
   }
+  
+  goreceipt(){
+    this.router.navigate(['/receipt']).then(() =>{
+
+    });
+  }
 
 }

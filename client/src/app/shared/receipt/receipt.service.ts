@@ -5,14 +5,12 @@ import { Observable } from 'rxjs/Observable';
   providedIn: 'root'
 })
 export class ReceiptService {
-
+  public API: string = "http://localhost:8080";
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json'
     })
   };
-
-  public API = '//localhost:8080';
 
   constructor(private http: HttpClient) { }
 
@@ -20,16 +18,19 @@ export class ReceiptService {
     return this.http.get('//localhost:8080/receipt');
   }
 
-  getEmployee(): Observable<any> {
-    return this.http.get('//localhost:8080/employee');
+  getEmployee(empId:any): Observable<any> {
+    // return this.http.get('//localhost:8080/employee');
+    return this.http.get(this.API + '/employee/' + empId);
   }
 
   getBranch(): Observable<any> {
     return this.http.get('//localhost:8080/branch');
   }
 
-  getCart(): Observable<any> {
-    return this.http.get('//localhost:8080/cart');
+  getCart(cartId:any): Observable<any> {
+    // return this.http.get('//localhost:8080/cart');
+    return this.http.get(this.API + '/cart/' + cartId);
+
   }
 }
 
@@ -54,5 +55,5 @@ export class Branch {
 }
 
 export class Cart {
-  rId: any;
+  cartId: any;
 }

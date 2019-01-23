@@ -30,6 +30,12 @@ public class ReceiptController {
         return receiptRepository.findAll().stream().collect(Collectors.toList());
     }
 
+    
+    @GetMapping("/BuyItem")
+    public Collection<BuyItem> bItems() {
+        return buyItemRepository.findAll().stream().collect(Collectors.toList());
+    }
+
     @PostMapping("/receipt/{date}/{netPrice}/{bName}/{eName}/{cartId}")
     public Receipt newReceipt(@RequestBody Receipt receipt,
                               @PathVariable Date date,
