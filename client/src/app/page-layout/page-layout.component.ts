@@ -28,5 +28,11 @@ export class PageLayoutComponent implements OnInit {
 
     });
   }
+  addemployee(){
+    this.router.navigate(['/add-employee']).then(() =>{
+    
+    });
+  }
 
+  
 }

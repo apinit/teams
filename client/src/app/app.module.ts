@@ -29,6 +29,7 @@ import { CreateCartComponent } from './components/create-cart/create-cart.compon
 import { CustomerComponent } from './components/customer/customer.component';
 import { FindEmployeeComponent } from './components/find-employee/find-employee.component';
 import { ReceiptComponent } from './components/receipt/receipt.component';
+import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/find-customer', pathMatch: 'full'},
@@ -48,7 +49,8 @@ const routes: Routes = [
     FindEmployeeComponent,
     CreateCartComponent,
     CustomerComponent,
-    ReceiptComponent
+    ReceiptComponent,
+    AddEmployeeComponent
   ],
   imports: [
     BrowserModule,
