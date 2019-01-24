@@ -1,16 +1,19 @@
 <mat-card class="container">
   <div class="container">
       <div class="receipt">
-        <h1>ค้นหาพนักงาน</h1>
+        <h1>รหัสผู้จ่ายเงิน (พนักงาน)</h1>
         <mat-form-field appearance="outline" class="inputID">
           <mat-label>ป้อนไอดีพนักงาน</mat-label>
           <input matInput [(ngModel)]="eid" name="eid" placeholder="ป้อนไอดีพนักงาน">
         </mat-form-field>
         <button mat-raised-button color="primary" (click)="onClickEmp()" id="findBtn">ค้นหา</button>
       </div>
-
+  </div>
+</mat-card>
+<mat-card class="container">
+  <div class="container">
       <div class="receipt">
-        <h1>ค้นหาใบรายการสินค้า</h1>
+        <h1>รหัสใบรายการสินค้า</h1>
         <mat-form-field appearance="outline" class="inputID">
           <mat-label>ป้อนไอดีใบรายการสินค้า</mat-label>
           <input matInput [(ngModel)]="cid" name="cid" placeholder="ป้อนไอดีใบรายการสินค้า">
@@ -19,10 +22,12 @@
       </div>
   </div>
 </mat-card>
-
+<!-- <mat-card>
+    <h2>ชื่อผู้จ่ายเงิน (พนักงาน) : </h2>
+</mat-card> -->
 <mat-card class="">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <!-- Position Column -->
     <ng-container matColumnDef="position">
       <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -45,8 +50,9 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 </mat-card>
+
 <mat-card class="container">
-    <h1>ราคาสุทธิ</h1>
+    <h2>ราคาสุทธิ :</h2>
   <div class="container">
   <button mat-raised-button color="primary" (click)="onClickCart()" id="findBtn">คำนวณ</button>
   </div>
