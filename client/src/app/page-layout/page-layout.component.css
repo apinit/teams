@@ -24,6 +24,9 @@
 .mat-sidenav-content{
     margin: 30px;
 }
-li{
+
+.button1{
+    font-size: 18px;
     cursor: pointer;
+   
 }
