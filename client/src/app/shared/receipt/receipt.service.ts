@@ -17,21 +17,22 @@ export class ReceiptService {
   getReceipt(): Observable<any> {
     return this.http.get('//localhost:8080/receipt');
   }
-
+  getBranch(): Observable<any> {
+    return this.http.get('//localhost:8080/branch');
+  }
+  getEmpName():Observable<any>{
+    return this.http.get('//localhost:8080/employee');
+    // return this.http.get(this.API + '/cart/'+ empName);
+  }
   getEmployee(empId:any): Observable<any> {
     // return this.http.get('//localhost:8080/employee');
     return this.http.get(this.API + '/employee/' + empId);
   }
-
-  getBranch(): Observable<any> {
-    return this.http.get('//localhost:8080/branch');
-  }
-
   getCart(cartId:any): Observable<any> {
     // return this.http.get('//localhost:8080/cart');
     return this.http.get(this.API + '/cart/' + cartId);
-
   }
+
 }
 
 export class Receipt {
