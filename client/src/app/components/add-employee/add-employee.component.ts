@@ -16,7 +16,8 @@ export class AddEmployeeComponent implements OnInit {
   branchs : Array<any>;
   positions : Array<any>;
   educations : Array<any>;
-  province : Array<any>;
+  province : Array<any>;  
+  
 
 
   constructor( 
