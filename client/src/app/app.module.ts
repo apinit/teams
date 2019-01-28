@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+//import {MatDatepickerModule} from '@angular/material/datepicker';
+
 import { 
   MatButtonModule,
   MatCardModule,
@@ -13,8 +15,11 @@ import {
   MatRadioModule,
   MatCheckboxModule,
   MatIconModule,
-  MatSidenavModule
-} from '@angular/material';
+  MatSidenavModule,
+  MatDatepickerModule,
+  MatNativeDateModule
+} 
+from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -38,7 +43,8 @@ const routes: Routes = [
   {path: 'find-employee', component: FindEmployeeComponent},
   {path: ':id/newCart', component: CreateCartComponent},
   {path: 'customer', component: CustomerComponent},
-  {path: 'receipt', component: ReceiptComponent}
+  {path: 'receipt', component: ReceiptComponent},
+  {path: 'add-employee', component: AddEmployeeComponent}
 ];
 
 @NgModule({
@@ -70,7 +76,9 @@ const routes: Routes = [
     MatRadioModule,
     MatCheckboxModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     FindCustomerService,

@@ -1,0 +1,28 @@
+.content{
+    margin: 200px;
+}
+/* .employee-card {
+    margin: auto;
+    padding: auto;
+    box-shadow: 20px;
+    border-radius: 2px;
+    
+}
+ */
+
+.title {
+    margin: auto;
+}
+
+.example-full-width {
+    width: 100%;
+    text-align: ;
+}
+mat-card {
+    max-width: 100%;
+}
+.titleName{
+    font-size: 20px;
+}
+
+
