@@ -11,7 +11,7 @@ import { AddEmployeeService, Employee } from '../../shared/add-employee/add-empl
   styleUrls: ['./add-employee.component.css']
 })
 export class AddEmployeeComponent implements OnInit {
-
+  bdate : any;
   employee : Employee = new Employee();
   branchs : Array<any>;
   positions : Array<any>;
