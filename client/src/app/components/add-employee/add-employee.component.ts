@@ -11,12 +11,13 @@ import { AddEmployeeService, Employee } from '../../shared/add-employee/add-empl
   styleUrls: ['./add-employee.component.css']
 })
 export class AddEmployeeComponent implements OnInit {
-  bdate : any;
+ 
   employee : Employee = new Employee();
   branchs : Array<any>;
   positions : Array<any>;
   educations : Array<any>;
-  province : Array<any>;  
+  province : Array<any>;
+  bDate : Date;
   
 
 
@@ -27,22 +28,28 @@ export class AddEmployeeComponent implements OnInit {
   ngOnInit() {
     this.service.getBranch().subscribe(data => {
       this.branchs = data;
+      console.log(this.branchs);
     });
     this.service.getEducation().subscribe(data => {
       this.educations = data;
+      console.log(this.educations);
     });
     this.service.getPosition().subscribe(data => {
       this.positions = data;
+      console.log(this.positions);
+
     });
     this.service.getProvince().subscribe(data => {
       this.province = data;
+      console.log(this.province);
+
     });
 
   }
   save(){
-    console.log(this.employee.bdate);
+    console.log(this.employee.bDate);
     this.httpClient.post('//localhost:8080/Employee/' + this.employee.title + '/'+
-    this.employee.eName + '/' + this.employee.age + '/' + this.employee.bdate + '/' + 
+    this.employee.eName + '/' + this.employee.age + '/' + this.employee.bDate + '/' + 
     this.employee.tel + '/' + this.employee.address + '/'+ this.employee.province.pid + '/' + 
     this.employee.education.edid + '/' + this.employee.branch.bid + '/' + this.employee.position.psid
     ,this.employee).subscribe(

@@ -1,14 +1,16 @@
 .content{
     margin: 200px;
+    align-content: center;
+    align-items: center;
 }
-/* .employee-card {
+.employee-card {
     margin: auto;
     padding: auto;
     box-shadow: 20px;
     border-radius: 2px;
-    
+    align-content: center;
+    align-items: center;
 }
- */
 
 .title {
     margin: auto;

@@ -10,23 +10,18 @@
         <mat-form-field class="example-full-width" >
           <input matInput placeholder="คำนำหน้า"  [(ngModel)]="employee.title" name="title" required >
         </mat-form-field> 
-     
-                 
-              
-                <mat-form-field class="example-full-width" >
-                  <input matInput placeholder="ชื่อ-นามสกุล"  [(ngModel)]="employee.eName" name="name" required >
-                </mat-form-field> 
-             
-                <mat-form-field class="example-full-width">
-                  <input matInput placeholder="อายุ"  [(ngModel)]="employee.age" name="age" required>
-                </mat-form-field> <br>
-                <mat-label style="font-size:20px">วันเกิด</mat-label> 
-                <!-- <mat-form-field>
-                  <input matInput [matDatepicker]="bdate" placeholder="วันเกิด">
-                  <mat-datepicker-toggle matSuffix [for]="bdate"></mat-datepicker-toggle>
-                  <mat-datepicker #mybdate  ></mat-datepicker>
-                </mat-form-field> -->
-              
+        <mat-form-field class="example-full-width" >
+          <input matInput placeholder="ชื่อ-นามสกุล"  [(ngModel)]="employee.eName" name="name" required>
+        </mat-form-field> 
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="อายุ"  [(ngModel)]="employee.age" name="age" required>
+        </mat-form-field> <br>
+        <mat-label style="font-size:20px">วันเกิด</mat-label> 
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="วันเกิด" [(ngModel)]="bDate" name="bDate"> 
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker  ></mat-datepicker>
+        </mat-form-field>       
         <mat-form-field class="example-full-width">
           <input matInput placeholder="เบอร์โทรศัพท์"  [(ngModel)]="employee.tel" name="tel" required>
         </mat-form-field> <br>
@@ -43,7 +38,7 @@
         <mat-form-field>
           <mat-select placeholder="วุฒิการศึกษา" name="education" [(ngModel)]="employee.education" required >
             <mat-option *ngFor="let education of educations" [value]="education">   
-              {{education.edid}}
+              {{education.edName}}
             </mat-option>
          </mat-select>
         </mat-form-field><br>
@@ -57,14 +52,14 @@
         <mat-form-field>
           <mat-select placeholder="ตำแหน่ง" name="position" [(ngModel)]="employee.position" required >
             <mat-option *ngFor="let position of positions" [value]="position">   
-              {{position.psid}}
+              {{position.psName}}
             </mat-option>
           </mat-select>
         </mat-form-field><br>
         
       </form>
       <div class="button-submit">
-        <button mat-flat-button color="warn" id="emp" >
+        <button mat-flat-button color="warn" id="emp"  >
           บันทึก
         </button> 
       </div> 
