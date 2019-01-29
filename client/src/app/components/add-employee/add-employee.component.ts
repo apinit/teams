@@ -17,7 +17,8 @@ export class AddEmployeeComponent implements OnInit {
   positions : Array<any>;
   educations : Array<any>;
   province : Array<any>;
-  bDate : Date;
+  bdate : Date;
+  titleSelect:String[] = ['นาย','นาง','นางสาว'];
   
 
 
@@ -42,19 +43,20 @@ export class AddEmployeeComponent implements OnInit {
     this.service.getProvince().subscribe(data => {
       this.province = data;
       console.log(this.province);
-
+      console.log(this.titleSelect);
     });
 
   }
   save(){
-    console.log(this.employee.bDate);
+    
     this.httpClient.post('//localhost:8080/Employee/' + this.employee.title + '/'+
-    this.employee.eName + '/' + this.employee.age + '/' + this.employee.bDate + '/' + 
+    this.employee.eName + '/' + this.employee.age + '/' + this.employee.bdate + '/' + 
     this.employee.tel + '/' + this.employee.address + '/'+ this.employee.province.pid + '/' + 
     this.employee.education.edid + '/' + this.employee.branch.bid + '/' + this.employee.position.psid
     ,this.employee).subscribe(
       data => {
         console.log('Save Successful, Congratulations ', data);
+        console.log(this.employee.bdate);
       },
       error => {
         console.log('!!!! Warning, Error !!!!!', error);

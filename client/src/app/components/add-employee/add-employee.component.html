@@ -6,35 +6,46 @@
     </mat-card-header>
     <mat-card-content> <br> <br> <br>
       <form class="example-form" #employeeForm="ngForm" (ngSubmit)="save"> 
-          
-        <mat-form-field class="example-full-width" >
-          <input matInput placeholder="คำนำหน้า"  [(ngModel)]="employee.title" name="title" required >
-        </mat-form-field> 
+
+        <mat-form-field>
+          <mat-select placeholder="คำนำหน้า" name="province" [(ngModel)]="employee.title" required >
+            <mat-option *ngFor="let titleSelect of titleSelects" [value]="titleSelect">
+              {{titleSelect}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field><br>
+       
+
         <mat-form-field class="example-full-width" >
           <input matInput placeholder="ชื่อ-นามสกุล"  [(ngModel)]="employee.eName" name="name" required>
         </mat-form-field> 
+
         <mat-form-field class="example-full-width">
           <input matInput placeholder="อายุ"  [(ngModel)]="employee.age" name="age" required>
         </mat-form-field> <br>
-        <mat-label style="font-size:20px">วันเกิด</mat-label> 
+
         <mat-form-field>
           <input matInput [matDatepicker]="picker" placeholder="วันเกิด" [(ngModel)]="bDate" name="bDate"> 
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker  ></mat-datepicker>
-        </mat-form-field>       
+        </mat-form-field> 
+
         <mat-form-field class="example-full-width">
           <input matInput placeholder="เบอร์โทรศัพท์"  [(ngModel)]="employee.tel" name="tel" required>
         </mat-form-field> <br>
+
         <mat-form-field class="example-full-width">
           <input matInput placeholder="ที่อยู่"  [(ngModel)]="employee.address" name="address" required>
         </mat-form-field> <br>
-        <mat-form-field>
-          <mat-select placeholder="จังหวัด" name="province" [(ngModel)]="employee.province" required >
-            <mat-option *ngFor="let province of provinces" [value]="province">
-              {{province.pname}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field><br>
+
+        <mat-form-field class="name-input">
+            <mat-select placeholder="จังหวัด" name="province" [(ngModel)]="employee.province" required>
+              <mat-option *ngFor="let province of provinces" [value]="province">
+                {{province.pname}}
+              </mat-option>
+            </mat-select>  
+          </mat-form-field>
+
         <mat-form-field>
           <mat-select placeholder="วุฒิการศึกษา" name="education" [(ngModel)]="employee.education" required >
             <mat-option *ngFor="let education of educations" [value]="education">   
@@ -42,6 +53,7 @@
             </mat-option>
          </mat-select>
         </mat-form-field><br>
+
         <mat-form-field>
           <mat-select placeholder="สาขา" name="branch" [(ngModel)]="employee.branch" required>
             <mat-option *ngFor="let branch of branchs" [value]="branch">
@@ -49,6 +61,7 @@
             </mat-option>
           </mat-select>
         </mat-form-field><br>
+
         <mat-form-field>
           <mat-select placeholder="ตำแหน่ง" name="position" [(ngModel)]="employee.position" required >
             <mat-option *ngFor="let position of positions" [value]="position">   
@@ -56,13 +69,12 @@
             </mat-option>
           </mat-select>
         </mat-form-field><br>
-        
+        <div class="button-submit">
+          <button mat-flat-button color="warn" (click)="save()" >
+            บันทึก
+          </button> 
+        </div> 
       </form>
-      <div class="button-submit">
-        <button mat-flat-button color="warn" id="emp"  >
-          บันทึก
-        </button> 
-      </div> 
     </mat-card-content>
   </mat-card>
 </div>
