@@ -53,10 +53,10 @@ export class Province {
   pname : String;
 }
 export class Employee {
-  eId : Date;
+  eId : any;
   title : any ;
   eName : any;
-  bDate : any;
+  bdate : Date;
   age : any;
   tel :any ;
   address : any;
