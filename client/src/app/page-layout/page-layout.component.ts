@@ -33,6 +33,11 @@ export class PageLayoutComponent implements OnInit {
     
     });
   }
+  saveprice(){
+    this.router.navigate(['/save-price']).then(() =>{
+
+    });
+  }
 
   
 }
