@@ -38,6 +38,11 @@ export class PageLayoutComponent implements OnInit {
 
     });
   }
+  showprice(){
+    this.router.navigate(['/show-price']).then(() => {
+
+    });
+  }
 
   
 }

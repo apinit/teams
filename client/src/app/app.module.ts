@@ -36,6 +36,7 @@ import { FindEmployeeComponent } from './components/find-employee/find-employee.
 import { ReceiptComponent } from './components/receipt/receipt.component';
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 import { SavePriceComponent } from './components/save-price/save-price.component';
+import { ShowPriceComponent } from './components/show-price/show-price.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/find-customer', pathMatch: 'full'},
@@ -46,7 +47,8 @@ const routes: Routes = [
   {path: 'customer', component: CustomerComponent},
   {path: 'receipt', component: ReceiptComponent},
   {path: 'add-employee', component: AddEmployeeComponent},
-  {path: 'save-price', component: SavePriceComponent}
+  {path: 'save-price', component: SavePriceComponent},
+  {path: 'show-price', component: ShowPriceComponent}
 ];
 
 @NgModule({
@@ -59,7 +61,8 @@ const routes: Routes = [
     CustomerComponent,
     ReceiptComponent,
     AddEmployeeComponent,
-    SavePriceComponent
+    SavePriceComponent,
+    ShowPriceComponent
   ],
   imports: [
     BrowserModule,
