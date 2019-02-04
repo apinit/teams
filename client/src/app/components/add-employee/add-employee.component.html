@@ -7,13 +7,9 @@
     <mat-card-content> <br> <br> <br>
       <form class="example-form" #employeeForm="ngForm" (ngSubmit)="save"> 
 
-        <mat-form-field>
-          <mat-select placeholder="คำนำหน้า" name="province" [(ngModel)]="employee.title" required >
-            <mat-option *ngFor="let titleSelect of titleSelects" [value]="titleSelect">
-              {{titleSelect}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field><br>
+        <mat-form-field class="example-full-width" >
+          <input matInput placeholder="คำนำหน้า"  [(ngModel)]="employee.title" name="title" required >
+        </mat-form-field> 
        
 
         <mat-form-field class="example-full-width" >

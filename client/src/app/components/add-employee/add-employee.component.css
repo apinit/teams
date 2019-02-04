@@ -1,24 +1,22 @@
 .content{
-    margin: 200px;
-    align-content: center;
-    align-items: center;
-}
-.employee-card {
-    margin: auto;
-    padding: auto;
-    box-shadow: 20px;
-    border-radius: 2px;
-    align-content: center;
-    align-items: center;
-}
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -300px;
+    margin-left: -200px;
+    border-radius: 5px;
 
+}
 .title {
     margin: auto;
 }
 
 .example-full-width {
     width: 100%;
-    text-align: ;
+    text-align: center;
 }
 mat-card {
     max-width: 100%;
@@ -26,5 +24,12 @@ mat-card {
 .titleName{
     font-size: 20px;
 }
-
+.button{
+    position: relative;
+    font-size: 30px;
+    width: 200px;
+    height: 40px;
+	top: 90%;
+	left: 75%;   
+}
 
